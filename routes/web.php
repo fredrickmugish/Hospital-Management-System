@@ -29,6 +29,14 @@ Route::post('/updatedoctor/{id}', [AdminController::class, 'updatedoctor']);
 
 Route::get('/deletedoctor/{id}', [AdminController::class, 'deletedoctor']);
 
+Route::post('/appointment', [HomeController::class, 'appointment']);
+
+Route::get('/viewappointment', [AdminController::class, 'viewappointment']);
+
+Route::get('/myappointment', [HomeController::class, 'myappointment']);
+
+Route::get('/deleteappoint/{id}', [HomeController::class, 'deleteappoint']);
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),

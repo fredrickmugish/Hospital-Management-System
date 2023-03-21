@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Models\Doctor;
 
+use App\Models\Appointment;
+
 class AdminController extends Controller
 {
     
@@ -66,5 +68,11 @@ class AdminController extends Controller
         $data = doctor::find($id);
         $data->delete();
         return redirect()->back();
+    }
+
+    public function viewappointment()
+    {
+        $appointment = appointment::all();
+        return view('admin.appointment', compact("appointment"));
     }
 }
