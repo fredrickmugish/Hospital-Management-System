@@ -6,13 +6,25 @@ use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
 
+use App\Models\Doctor;
+
 class HomeController extends Controller
 {
     
 public function index()
+
 {
-    return view('home');
+if(Auth::id())
+{
+  return redirect('home');
 }
+
+else{
+    $data = doctor::all();
+    return view('home', compact('data'));
+}
+
+    }
 
 public function redirects()
 {

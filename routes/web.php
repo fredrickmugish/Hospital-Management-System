@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/redirects', [HomeController::class, 'redirects']);
+
+Route::get('/viewdoctors', [AdminController::class, 'viewdoctors']);
+
+Route::post('/uploaddoctor', [AdminController::class, 'uploaddoctor']);
+
+Route::get('/updateview/{id}', [AdminController::class, 'updateview']);
+
+Route::post('/updatedoctor/{id}', [AdminController::class, 'updatedoctor']);
+
+Route::get('/deletedoctor/{id}', [AdminController::class, 'deletedoctor']);
 
 Route::middleware([
     'auth:sanctum',
