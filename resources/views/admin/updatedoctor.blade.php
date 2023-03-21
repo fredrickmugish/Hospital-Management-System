@@ -5,6 +5,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+
+<style>
+  label{
+    display: inline;
+    width: 100px;
+  }
+</style>
+
+
     <base href="/public">
    @include('admin.admincss')
   </head>
@@ -14,6 +23,12 @@
             
    
       <div style="position: relative; top:60px; right:-100px">
+<!--doctor updated successfuly message-->
+@if (session()->has('message'))
+  <div class="alert alert-success">
+{{ session()->get('message') }}
+  </div>
+@endif
         <form action="{{ url('/updatedoctor', $data->id) }}" method="post" enctype="multipart/form-data">
             @csrf
             <div>

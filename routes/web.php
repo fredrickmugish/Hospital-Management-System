@@ -21,6 +21,8 @@ Route::get('/redirects', [HomeController::class, 'redirects']);
 
 Route::get('/viewdoctors', [AdminController::class, 'viewdoctors']);
 
+Route::get('/showdoctors', [AdminController::class, 'showdoctors']);
+
 Route::post('/uploaddoctor', [AdminController::class, 'uploaddoctor']);
 
 Route::get('/updateview/{id}', [AdminController::class, 'updateview']);
@@ -36,6 +38,12 @@ Route::get('/viewappointment', [AdminController::class, 'viewappointment']);
 Route::get('/myappointment', [HomeController::class, 'myappointment']);
 
 Route::get('/deleteappoint/{id}', [HomeController::class, 'deleteappoint']);
+
+Route::get('/approve/{id}', [AdminController::class, 'approve']);
+
+Route::get('/cancel/{id}', [AdminController::class, 'cancel']);
+
+
 
 Route::middleware([
     'auth:sanctum',

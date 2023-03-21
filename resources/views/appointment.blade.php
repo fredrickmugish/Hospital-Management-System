@@ -20,7 +20,7 @@
 
               <option>--select doctor--</option>
               @foreach ($data as $data)
-              <option>{{ $data->name }} --speciality--{{ $data->speciality }}</option>
+              <option>{{ $data->name }}--{{ $data->speciality }}</option>
               @endforeach
               
             </select>

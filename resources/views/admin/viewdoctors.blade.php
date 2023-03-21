@@ -23,6 +23,17 @@ label{
       <div style="position: relative; top:60px; right:-50px">
 <!--doctor uploaded successfuly message--->
 
+@if (session()->has('message'))
+    <div class="alert alert-success">
+      
+        <button type="button" class="close" data-dismiss="alert"></button>
+        {{ session()->get('message') }}
+
+    </div>
+@endif
+
+    <h1>Add doctors</h1>
+
        <form action="{{ url('/uploaddoctor') }}" method="post" enctype="multipart/form-data">
             @csrf
             <div style="padding: 10px">
@@ -55,33 +66,6 @@ label{
             </div>
     
         </form>
-       
-    
-        <div>
-            <table bgcolor="black">
-                <tr>
-                    <th style="padding: 30px" >Name</th>
-                    <th style="padding: 30px">phone</th>
-                    <th style="padding: 30px">Speciality</th>
-                    <th style="padding: 30px">Room</th>
-                    <th style="padding: 30px">Image</th>
-                    <th style="padding: 30px">Action</th>
-                    <th style="padding: 30px">Action</th>
-                </tr>
-    
-                @foreach ($data as $data)
-                <tr align="center">
-                    <td>{{ $data->name }}</td>
-                    <td>{{ $data->phone }}</td>
-                    <td>{{ $data->speciality }}</td>
-                    <td>{{ $data->room }}</td>
-                    <td><img height="100" width="100" src="/doctorimage/{{ $data->image }}"></td>
-                    <td><a href="{{ url('/updateview', $data->id) }}" class="btn btn-primary">Update</a></td>
-                    <td><a href="{{ url('/deletedoctor', $data->id)}}" class="btn btn-danger">Delete</a></td>
-                </tr>
-                @endforeach
-            </table>
-        </div>
        
       </div>
     </div>

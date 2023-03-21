@@ -14,10 +14,19 @@
               <span class="menu-icon">
                 <i class="mdi mdi-speedometer"></i>
               </span>
-              <span class="menu-title">Doctors</span>
+              <span class="menu-title">Add Doctors</span>
             </a>
           </li>
           
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="{{ url('/showdoctors') }}">
+              <span class="menu-icon">
+                <i class="mdi mdi-speedometer"></i>
+              </span>
+              <span class="menu-title">Show Doctors</span>
+            </a>
+          </li>
+
           <li class="nav-item menu-items">
             <a class="nav-link" href="{{ url('/viewappointment') }}">
               <span class="menu-icon">
@@ -26,22 +35,7 @@
               <span class="menu-title">Appointments</span>
             </a>
           </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" href="pages/charts/chartjs.html">
-              <span class="menu-icon">
-                <i class="mdi mdi-chart-bar"></i>
-              </span>
-              <span class="menu-title">Charts</span>
-            </a>
-          </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" href="pages/icons/mdi.html">
-              <span class="menu-icon">
-                <i class="mdi mdi-contacts"></i>
-              </span>
-              <span class="menu-title">Icons</span>
-            </a>
-          </li>
+         
 
         </ul>
       </nav>
