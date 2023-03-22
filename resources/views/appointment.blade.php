@@ -1,5 +1,14 @@
 <div class="page-section">
     <div class="container">
+
+      @if (session()->has('message'))
+        <div class="alert alert-success">
+<button type="button" class="close" data-dismiss="alert"></button>
+       {{ session()->get('message') }}
+
+        </div>
+      @endif
+
       <h1 class="text-center wow fadeInUp">Make an Appointment</h1>
 
       <form class="main-form" action="{{ url('/appointment') }}" method="post">

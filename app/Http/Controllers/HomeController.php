@@ -61,7 +61,8 @@ public function redirects()
     }
 
     $appointment->save();
-    return redirect()->back();
+    return redirect()->back()->with('message', 'Appointment 
+    submitted successfuly, we will contact you soon');
 
   }
 
