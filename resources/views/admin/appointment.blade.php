@@ -24,6 +24,7 @@
             <th style="padding: 20px">Status</th>
             <th style="padding: 20px">Approved</th>
             <th style="padding: 20px">Canceled</th>
+            <th style="padding: 20px">Send Mail</th>
         </tr>
 
         @foreach ($appointment as $appointment)
@@ -37,7 +38,7 @@
             <td>{{ $appointment->status }}</td>
             <td><a href="{{ url('/approve', $appointment->id) }}" class="btn btn-success">Approved</a></td>
             <td><a href="{{ url('/cancel', $appointment->id) }}" class="btn btn-danger">Canceled</a></td>
-            
+            <td><a href="{{ url('/email', $appointment->id) }}" class="btn btn-primary">Send Mail</a></td>
         </tr>
         @endforeach
         

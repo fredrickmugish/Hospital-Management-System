@@ -101,4 +101,9 @@ class AdminController extends Controller
         $appointment->save();
         return redirect()->back();
     }
+
+    public function email($id)
+    {
+        return view('admin.email');
+    }
 }
