@@ -8,6 +8,10 @@ use App\Models\Doctor;
 
 use App\Models\Appointment;
 
+use Notification;
+
+use App\Notifications\SendEmailNotification;
+
 class AdminController extends Controller
 {
     
@@ -104,6 +108,24 @@ class AdminController extends Controller
 
     public function email($id)
     {
-        return view('admin.email');
+        $appointment = appointment::find($id);
+        return view('admin.email', compact('appointment'));
+    }
+
+
+    public function sendemail(Request $request, $id)
+    {
+         $appointment = appointment::find($id);
+
+         $details = [
+                  'greeting' => $request->greeting,
+                  'body' => $request->body,
+                  'actiontext' => $request->actiontext,
+                  'actionurl' => $request->actionurl,
+                  'endpart' => $request->actiontext
+         ];
+
+         Notification::send($appointment,new SendEmailNotification($details));
+         return redirect()->back()->with('message', 'Email Sent Successfuly');
     }
 }

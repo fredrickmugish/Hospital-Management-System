@@ -45,7 +45,7 @@ Route::get('/cancel/{id}', [AdminController::class, 'cancel']);
 
 Route::get('/email/{id}', [AdminController::class, 'email']);
 
-
+Route::post('/sendemail/{id}', [AdminController::class, 'sendemail']);
 
 Route::middleware([
     'auth:sanctum',
